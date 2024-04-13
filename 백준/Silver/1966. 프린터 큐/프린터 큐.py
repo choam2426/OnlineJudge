@@ -7,7 +7,7 @@ for _ in range(test_case):
     result = 0
     index = 0
     while print_queue[target]:
-        if level_stack[-1] == print_queue[index]:
+        if print_queue[index] and level_stack[-1] == print_queue[index]:
             print_queue[index] = False
             result += 1
             level_stack.pop()
