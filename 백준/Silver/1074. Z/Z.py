@@ -5,8 +5,7 @@ def recursive(r, c, n, v):
     if n == 2:
         result = v + (r * 2) + c
         print(result)
-        return
-        # exit(0)
+        exit(0)
     n = n // 2
 
     if r < n and c < n:
