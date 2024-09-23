@@ -1,30 +1,29 @@
 import sys
+input = sys.stdin.read
 
-input = sys.stdin.readline
-N, M = map(int, input().split())
+def merge_arrays(arr1, arr2):
+    result = []
+    i, j = 0, 0
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] <= arr2[j]:
+            result.append(arr1[i])
+            i += 1
+        else:
+            result.append(arr2[j])
+            j += 1
+    # 남은 요소들을 추가
+    result.extend(arr1[i:])
+    result.extend(arr2[j:])
+    return result
 
-arr1 = list(map(int, input().strip().split()))
-arr2 = list(map(int, input().strip().split()))
-result = []
-index_1 = 0
-index_2 = 0
+# 입력 처리
+data = input().split()
+N, M = int(data[0]), int(data[1])
+arr1 = list(map(int, data[2:N+2]))
+arr2 = list(map(int, data[N+2:]))
 
-while True:
-    if index_1 == N:
-        result.extend(arr2[index_2:])
-        break
-    elif index_2 == M:
-        result.extend(arr1[index_1:])
-        break
-    if arr1[index_1] > arr2[index_2]:
-        result.append(arr2[index_2])
-        index_2 += 1
-    elif arr1[index_1] < arr2[index_2]:
-        result.append(arr1[index_1])
-        index_1 += 1
-    else:
-        result.append(arr1[index_1])
-        result.append(arr2[index_2])
-        index_1 += 1
-        index_2 += 1
-print(*result)
+# 배열 병합
+merged_array = merge_arrays(arr1, arr2)
+
+# 결과 출력
+print(' '.join(map(str, merged_array)))
