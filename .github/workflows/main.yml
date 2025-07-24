@@ -10,7 +10,12 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: choam2426/AI-Algorithm-Mentor@main
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 
+      - name: call AI Algorithm Mentor
+        uses: choam2426/AI-Algorithm-Mentor@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LLM_PROVIDER: openai              # openai, google, anthropic
