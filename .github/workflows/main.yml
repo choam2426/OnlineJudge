@@ -6,7 +6,7 @@ on:
 
 jobs:
   ai-review:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: write
     steps:
@@ -18,4 +18,3 @@ jobs:
           MODEL_NAME: gpt-5.1                 # 모델명 (선택사항)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           REVIEW_LANGUAGE: korean           # korean, english, etc..
-          WEBCRAWLER_API_KEY: ${{ secrets.WEBCRAWLER_API_KEY }}
