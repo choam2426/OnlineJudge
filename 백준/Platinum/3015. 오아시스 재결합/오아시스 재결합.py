@@ -1,5 +1,4 @@
 # https://www.acmicpc.net/problem/3015
-
 import sys
 
 stack = []
@@ -23,5 +22,6 @@ for _ in range(N):
 
 
 print(result)
+
 
 
