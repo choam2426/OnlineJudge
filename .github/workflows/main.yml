@@ -18,4 +18,4 @@ jobs:
           MODEL_NAME: gpt-5.1                 # 모델명 (선택사항)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           REVIEW_LANGUAGE: korean           # korean, english, etc..
-          SCRAPERAPI_API_KEY: ${{ secrets.SCRAPERAPI_API_KEY }}
+          WEBCRAWLER_API_KEY: ${{ secrets.WEBCRAWLER_API_KEY }}
