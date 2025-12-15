@@ -1,3 +1,4 @@
+# https://www.acmicpc.net/problem/11729
 move_logs = []
 
 
@@ -17,3 +18,4 @@ hanoi_tower(N, 1, 3, 2)
 print(len(move_logs))
 for move_log in move_logs:
     print(*move_log)
+
