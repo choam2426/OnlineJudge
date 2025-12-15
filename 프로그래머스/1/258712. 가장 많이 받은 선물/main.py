@@ -1,3 +1,4 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/258712
 def solution(friends, gifts):
     answer = [0] * len(friends)
     table = [[0 for _ in range(len(friends))] for __ in range(len(friends))]
