@@ -20,10 +20,4 @@ for _ in range(N):
             result += 1
         stack.append((height, 1))
 
-
 print(result)
-
-
-
-
-
