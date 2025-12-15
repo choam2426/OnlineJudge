@@ -2,8 +2,6 @@
 def solution(friends, gifts):
     answer = [0] * len(friends)
     table = [[0 for _ in range(len(friends))] for __ in range(len(friends))]
-
-    # 선물 지수 계산
     gift_index = [0] * len(friends)
     for gift in gifts:
         give, take = gift.split(" ")
@@ -14,9 +12,9 @@ def solution(friends, gifts):
 
     for i in range(len(friends)):
         for j in range(i + 1, len(friends)):
-            if table[i][j] > table[j][i]:  # i가 준 횟수가 더 많음
+            if table[i][j] > table[j][i]:
                 answer[i] += 1
-            elif table[i][j] < table[j][i]:  # j가 준 횟수가 더 많음
+            elif table[i][j] < table[j][i]:
                 answer[j] += 1
             else:
                 if gift_index[i] > gift_index[j]:
